@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
-checkpoints/
+artifacts/
 data/*.csv
 !data/.gitkeep
 .venv/
