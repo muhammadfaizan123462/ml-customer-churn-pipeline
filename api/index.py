@@ -31,3 +31,9 @@ class _StripApiPrefixMiddleware:
 
 
 app = _StripApiPrefixMiddleware(churn_app)
+
+
+@churn_app.get("/{full_path:path}", include_in_schema=False)
+async def _echo_seen_path(full_path: str):
+    """TEMPORARY diagnostic: report the path the app actually sees."""
+    return {"seen_path": "/" + full_path}
